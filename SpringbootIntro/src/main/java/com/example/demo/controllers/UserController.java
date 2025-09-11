@@ -24,7 +24,7 @@ public class UserController{
     @PostMapping
     public User create(@RequestBody User user)
     {
-        return repository.save(user);
+            return repository.save(user);
     }
 
     @GetMapping("/{id}")
@@ -43,7 +43,7 @@ public class UserController{
                 }).orElseThrow();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id)
     {
         repository.deleteById(id);
